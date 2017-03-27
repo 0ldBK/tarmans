@@ -1,0 +1,25 @@
+<fieldset>
+    <legend>Кланвар</legend>
+    <div ng-if="!cache.klan.war && !scheduler.get('klan::declareWar')">
+        <select ng-options="klan as klan.name for klan in cache.klans"
+                ng-model="tmp.klan.war">
+        </select>
+        <input type="radio" name="warType"
+               ng-model="tmp.klan.war.type" value="1" id="duel"/>
+        <label for="duel">Дуэльная</label>
+        <input type="radio" name="warType"
+               ng-model="tmp.klan.war.type" value="2" id="alliance"/>
+        <label for="alliance">Альянсовая</label>
+        <input type="button" value="Объявить войну!"
+               ng-click="actions.declareWar(tmp.klan.war)">
+    </div>
+    <div ng-if="!cache.klan.war && scheduler.get('klan::declareWar')">
+        <input type="submit" value="Отменить объявление войны!"
+               ng-if="scheduler.get('klan::declareWar')"
+               ng-click="scheduler.clear('klan::declareWar')">
+
+    </div>
+    <div ng-if="cache.klan.war.opponents.length">
+        Ваш клан воюет против клана(ов): <b>{{cache.klan.war.opponents}}</b>
+    </div>
+</fieldset>

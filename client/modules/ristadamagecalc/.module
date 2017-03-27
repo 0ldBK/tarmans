@@ -1,0 +1,6 @@
+{
+  "name": "ristadamagecalc",
+  "label": "Посчитать урон в групповом бою",
+  "template": "ristadamagecalc/config.html",
+  "location": "general"
+}

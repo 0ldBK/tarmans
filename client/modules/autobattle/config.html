@@ -1,0 +1,174 @@
+<fieldset ng-init="abc=config.autobattle.configs[config.autobattle.current]">
+    <legend>
+        Автобой
+        <input type="checkbox" ng-model="config.autobattle.enabled" id="abEnabled">
+        <label for="abEnabled">Включить авто-бой</label>
+        <select ng-model="config.autobattle.current"
+                ng-options="cIndex as conf.name group by abGroupName(conf.type) for (cIndex, conf) in config.autobattle.configs"
+                ng-change="abc=config.autobattle.configs[config.autobattle.current]">
+        </select>
+        <button ng-click="abc=abCreateConfig(abc);">Создать</button>
+        <button ng-click="abRemoveConfig(abc)">Удалить</button>
+    </legend>
+    <div ng-if="config.autobattle.current && abc">
+        <ul class="ab-type">
+            <li ng-class="{active: abc.type === 'killall'}"
+                ng-click="abc.type='killall'">Бъем всех</li>
+            <li ng-class="{active: abc.type === 'haot'}"
+                ng-click="abc.type='haot'">Хаоты</li>
+            <li ng-class="{active: abc.type === 'manual'}"
+                ng-click="abc.type='manual'">Ручной</li>
+            <li ng-class="{active: abc.type === 'rista'}"
+                ng-click="abc.type='rista'">Ристалище</li>
+        </ul>
+        <br>
+        Задержка(мс.): <input type="number" ng-model="abc.delay"><br>
+        Автоответ(±1 лвл.)(сек.): <input type="number" ng-model="abc.autoResponse"><br>
+        тип боя: {{cache.battle.type}}<br>
+        <label for="abMinHPToHeal">Хилиться при ХП пиже:</label>
+        <input type="number" ng-model="abc.minHPToHeal" id="abMinHPToHeal">
+        <select ng-model="abc.healSequence">
+            <option value="">Не хилиться</option>
+            <option value="scrolls">Только Свитки</option>
+            <option value="inbound">Только Встройки</option>
+            <option value="inbound,scrolls">Встройки, Свитки</option>
+            <option value="scrolls,inbound">Свитки, Встройки</option>
+        </select>
+        <div ng-if="abc.type === 'killall'">
+            <code>Бъем всех подряд без разбора...</code>
+        </div>
+        <div ng-if="abc.type === 'haot'">
+            <fieldset style="width: 150px;float: left;">
+                <legend>Танк</legend>
+                АК: <input type="number" ng-model="abc.tank.ac.min" class="small"> -
+                <input type="number" ng-model="abc.tank.ac.max" class="small">
+                <b class="arrow" ng-click="abc.tank.ac.order=!abc.tank.ac.order">
+                    {{abc.tank.ac.order && '↑' || '↓'}}</b>
+                <br>
+                АУ: <input type="number" ng-model="abc.tank.ad.min" class="small"> -
+                <input type="number" ng-model="abc.tank.ad.max" class="small">
+                <b class="arrow" ng-click="abc.tank.ad.order=!abc.tank.ad.order">
+                    {{abc.tank.ad.order && '↑' || '↓'}}</b>
+            </fieldset>
+            <fieldset style="width: 150px;float: left;">
+                <legend>Крит</legend>
+                АК: <input type="number" ng-model="abc.crit.ac.min" class="small"> -
+                <input type="number" ng-model="abc.crit.ac.max" class="small">
+                <b class="arrow" ng-click="abc.crit.ac.order=!abc.crit.ac.order">
+                    {{abc.crit.ac.order && '↑' || '↓'}}</b>
+                <br>
+                АУ: <input type="number" ng-model="abc.crit.ad.min" class="small"> -
+                <input type="number" ng-model="abc.crit.ad.max" class="small">
+                <b class="arrow" ng-click="abc.crit.ad.order=!abc.crit.ad.order">
+                    {{abc.crit.ad.order && '↑' || '↓'}}</b>
+            </fieldset>
+            <fieldset style="width: 150px;float: left;">
+                <legend>Уворот</legend>
+                АК: <input type="number" ng-model="abc.dodge.ac.min" class="small"> -
+                <input type="number" ng-model="abc.dodge.ac.max" class="small">
+                <b class="arrow" ng-click="abc.dodge.ac.order=!abc.dodge.ac.order">
+                    {{abc.dodge.ac.order && '↑' || '↓'}}</b>
+                <br>
+                АУ: <input type="number" ng-model="abc.dodge.ad.min" class="small"> -
+                <input type="number" ng-model="abc.dodge.ad.max" class="small">
+                <b class="arrow" ng-click="abc.dodge.ad.order=!abc.dodge.ad.order">
+                    {{abc.dodge.ad.order && '↑' || '↓'}}</b>
+            </fieldset>
+            <div style="float: none"></div>
+        </div>
+        <div ng-if="abc.type === 'manual'">
+            <table style="width: 100%;height: 100%">
+                <thead><tr>
+                    <th style="width: 50%;">Игроки</th><th></th><th>Бъем</th>
+                </tr></thead>
+                <tbody>
+                <tr style="vertical-align: top">
+                    <td>
+                        <div style="overflow-y: auto;overflow-x: hidden;height: 333px;">
+                            <div ng-repeat="opponent in cache.battle.opponents | where:'!priority' | orderBy:'opponent.login'"
+                                 title="{{opponent.reasons}}"
+                                 style="cursor: pointer;user-select: none;"
+                                 ng-dblclick="opponent.priority=1;opponent.active=true;">
+                                <img ng-src="http://i.oldbk.com/i/align_{{opponent.align}}.gif"
+                                     ng-if="opponent.align">
+                                <img ng-src="http://i.oldbk.com/i/klan/{{opponent.klan}}.gif"
+                                     ng-if="opponent.klan"
+                                     title="{{opponent.klan}}">
+                                <b>{{opponent.login}}</b>
+                                [{{opponent.level}}]
+                                <a ng-if="opponent.id"
+                                   ng-href="inf.php?{{opponent.id}}" target="_blank">
+                                    <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11"
+                                         alt="Инф. о {{opponent.login}}">
+                                </a>
+                                ({{opponent.class}}:{{opponent.subclass}})
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 20px;">
+                        <hr style="width: 1px; height: 90%; display: inline-block;">
+                    </td>
+                    <td>
+                        <div style="overflow-y: auto;overflow-x: hidden;height: 333px;">
+                            <div ng-repeat="opponent in cache.battle.opponents | where:'priority > 0' | orderBy:'opponent.priority'"
+                                 title="{{opponent.reasons}}"
+                                 ng-dblclick="opponent.priority=0"
+                                 ng-click="opponent.active=!opponent.active"
+                                 class="{{'ab-manual-priority-' + opponent.priority}}"
+                                 style="cursor: pointer;user-select: none;"
+                                 ng-class="{'ab-manual-active': opponent.active}">
+                                <img ng-src="http://i.oldbk.com/i/align_{{opponent.align}}.gif"
+                                     ng-if="opponent.align">
+                                <img ng-src="http://i.oldbk.com/i/klan/{{opponent.klan}}.gif"
+                                     ng-if="opponent.klan"
+                                     title="{{opponent.klan}}">
+                                <b>{{opponent.login}}</b>
+                                [{{opponent.level}}]
+                                <a ng-if="opponent.id"
+                                   ng-href="inf.php?{{opponent.id}}" target="_blank">
+                                    <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11"
+                                         alt="Инф. о {{opponent.login}}">
+                                </a>
+                                ({{opponent.class}}:{{opponent.subclass}}) <b>{{opponent.weight}}</b>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 20px;">
+                        <button style="background-color: #70a022" ng-click="abSetPriority(500)">+500</button>
+                        <button style="background-color: #0ea078" ng-click="abSetPriority(400)">+400</button>
+                        <button style="background-color: #7370a0" ng-click="abSetPriority(300)">+300</button>
+                        <button style="background-color: #a05e97" ng-click="abSetPriority(200)">+200</button>
+                        <button style="background-color: #a05355" ng-click="abSetPriority(100)">+100</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="abc.type === 'rista'">
+            Я буду:<br>
+            <input type="radio" name="gladiator" id="killer" ng-model="abc.gladiator" value="killer">
+            <label for="killer">убийца</label><br>
+            <input type="radio" name="gladiator" id="damager" ng-model="abc.gladiator" value="damager">
+            <label for="damager">наносить урон</label><br>
+            <div ng-if="abc.gladiator === 'damager'">
+                <label for="leaveHP">Оставить ХП</label>
+                <input type="number" id="leaveHP" ng-model="abc.ristaLeaveHP">
+                <label for="damageAverage">при среднем уроне в </label>
+                <input type="number" id="damageAverage" ng-model="ristaDamageAverage">
+            </div>
+            <div ng-if="abc.gladiator === 'killer'">
+                <label for="maximalBotHP">Добивать, если у бота ХП &lt;</label>
+                <input type="number" id="maximalBotHP" ng-model="abc.ristaMaximalBotHP">
+            </div>
+            <br>
+            <textarea style="width: 100%" ng-list="," ng-trim="true" rows="10"
+                      ng-model="abc.ristaBots">
+            </textarea>
+        </div>
+        <hr>
+        Whitelist: <br>
+        <textarea style="width: 100%;" rows="2" ng-list="," ng-trim="true"
+                  ng-model="abc.whiteList">
+        </textarea>
+    </div>
+</fieldset>

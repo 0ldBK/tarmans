@@ -1,0 +1,6 @@
+{
+  "name": "autobattle",
+  "label": "Автобой",
+  "template": "autobattle/config.html",
+  "location": "tab"
+}

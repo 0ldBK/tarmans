@@ -1,0 +1,6 @@
+{
+  "name": "autohaot",
+  "label": "Хаоты",
+  "template": "autohaot/config.html",
+  "location": "tab"
+}

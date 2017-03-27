@@ -1,0 +1,13 @@
+{
+  "server": {
+    "port": 48880,
+    "host": "0.0.0.0"
+  },
+  "db": {
+    "connect": "localhost/tarmans"
+  },
+  "log": {
+    "level": "debug"
+  },
+  "pluginModules": "../client"
+}

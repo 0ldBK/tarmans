@@ -1,0 +1,198 @@
+<table>
+    <tr>
+        <td style="vertical-align: top;">
+            <fieldset style="height: 100%">
+                <legend>Пользователи для перехвата</legend>
+                <div ng-repeat="intercept in config.intercept.list"
+                     ng-class="{active: intercept.selected}">
+                    <input type="checkbox"
+                           ng-model="intercept.enabled"
+                           title="Активировать">
+                    <b class="large"
+                       title="Вмешиваться в бой"
+                       ng-class="{'img-disabled': !intercept.inBattle}"
+                       ng-click="intercept.inBattle = !intercept.inBattle">⚔</b>
+                    <span ng-if="intercept.type == 'user'">
+                        <b class="large"
+                           ng-if="intercept.type == 'user'"
+                           title="перехватывать оффлайн"
+                           ng-class="{'img-disabled': !intercept.offline}"
+                           ng-click="intercept.offline = !intercept.offline">☀</b>
+                        <img ng-src="http://i.oldbk.com/i/align_{{intercept.enemy.align}}.gif"
+                             ng-if="intercept.enemy.align">
+                        <img ng-src="http://i.oldbk.com/i/klan/{{intercept.enemy.klan}}.gif"
+                             ng-if="intercept.enemy.klan"
+                             title="{{intercept.enemy.klan}}">
+                        <b>{{intercept.enemy.login}}</b>
+                        <a ng-if="intercept.enemy.id"
+                           ng-href="inf.php?{{intercept.enemy.id}}" target="_blank">
+                            <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11"
+                                 alt="Инф. о {{intercept.enemy.login}}">
+                        </a>
+
+                    </span>
+                    <span ng-if="intercept.type == 'klan'">
+                        <img ng-src="http://i.oldbk.com/i/klan/{{intercept.enemy.name.split(' - ')[0]}}.gif"
+                             title="{{intercept.enemy.name}}">
+                        <b>{{intercept.enemy.name}}</b>
+                    </span>
+                    <span ng-if="intercept.type == 'opposition'">
+                        <b>Противостояние</b>
+                        <img src="http://i.oldbk.com/i/align_2.gif"
+                             ng-if="cache.user.align !== 2"
+                             style="width: 12px;height: 15px;">
+                        <img src="http://i.oldbk.com/i/align_3.gif"
+                             ng-if="cache.user.align !== 3"
+                             style="width: 12px;height: 15px;">
+                        <img src="http://i.oldbk.com/i/align_6.gif"
+                             ng-if="cache.user.align !== 6"
+                             style="width: 12px;height: 15px;">
+                    </span>
+                    <span ng-if="intercept.type == 'war'">
+                        <strong>Война</strong>
+                    </span>
+                    <span ng-if="intercept.levels">
+                        ({{intercept.levels}})
+                    </span>
+                    <a ng-click="interceptRemove(intercept)" style="cursor: pointer">✘</a>&nbsp;&nbsp;
+                    <span ng-repeat="action in intercept.actions" style="position: relative;">
+                        <img ng-src="{{action.scroll.image}}" title="{{action.scroll.description}}" width="22">
+                        <span ng-if="action.durability > 1" style="position: absolute; bottom: 3px;right: 10px;">
+                            <b>x{{action.durability}}</b>
+                        </span>
+                        <span ng-if="!$last"> -&gt; </span>
+                    </span>
+                </div>
+            </fieldset>
+        </td>
+        <td style="vertical-align: top;">
+            <fieldset>
+                <legend>Добавить
+                    <select ng-model="tmp.intercept.type"
+                            ng-change="changeInterceptType(tmp.intercept.type);">
+                        <option value="user">Пользователя</option>
+                        <option value="klan">Клан</option>
+                        <option value="war">Война</option>
+                        <option value="opposition">Противостояние</option>
+                        <option value="align">Склонность</option>
+                    </select>
+                </legend>
+                <div ng-if="!tmp.intercept.enemy">
+                    <div ng-if="tmp.intercept.type == 'user'">
+                        <input type="text" ng-model="tmp.intercept.login">
+                        <button ng-click="loadUser(tmp.intercept.login, 'tmp.intercept.enemy')">
+                            проверить
+                        </button>
+                    </div>
+                    <div ng-if="tmp.intercept.type == 'klan'">
+                        <select ng-options="klan as klan.name for klan in cache.klans"
+                                ng-model="tmp.intercept.enemy">
+                            <option value="">Выберите клан</option>
+                        </select>
+                    </div>
+                </div>
+                <div ng-if="tmp.intercept.enemy">
+                    <div ng-if="tmp.intercept.type == 'user'">
+                        <img ng-src="http://i.oldbk.com/i/align_{{tmp.intercept.enemy.align}}.gif"
+                             ng-if="tmp.intercept.enemy.align"
+                             style="width: 12px;height: 15px;">
+                        <img ng-src="http://i.oldbk.com/i/klan/{{tmp.intercept.enemy.klan}}.gif"
+                             ng-if="tmp.intercept.enemy.klan"
+                             title="{{tmp.intercept.enemy.klan}}">
+                        <b>{{tmp.intercept.enemy.login}}</b>
+                        <a ng-if="tmp.intercept.enemy.id"
+                           ng-href="inf.php?{{tmp.intercept.enemy.id}}" target="_blank">
+                            <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11"
+                                 alt="Инф. о {{tmp.intercept.enemy.login}}">
+                        </a>
+                    </div>
+                    <div ng-if="tmp.intercept.type == 'klan'">
+                        <img ng-src="http://i.oldbk.com/i/klan/{{tmp.intercept.enemy.name.split(' - ')[0]}}.gif"
+                             title="{{tmp.intercept.enemy.name}}">
+                        <b>{{tmp.intercept.enemy.name}}</b>
+                    </div>
+                    <div ng-if="tmp.intercept.type == 'opposition'">
+                        Противостояние:
+                        <img src="http://i.oldbk.com/i/align_2.gif"
+                             ng-if="cache.user.align !== 2"
+                             style="width: 12px;height: 15px;">
+                        <img src="http://i.oldbk.com/i/align_3.gif"
+                             ng-if="cache.user.align !== 3"
+                             style="width: 12px;height: 15px;">
+                        <img src="http://i.oldbk.com/i/align_6.gif"
+                             ng-if="cache.user.align !== 6"
+                             style="width: 12px;height: 15px;">
+                        <hr>
+                        Бъем:
+                        <input type="checkbox" id="minusOne"
+                               ng-click="toggle('tmp.intercept.levels', cache.user.level - 1)"
+                               ng-checked="tmp.intercept.levels.indexOf(cache.user.level - 1) > -1">
+                        <label for="minusOne">{{cache.user.level - 1}}</label>
+                        <input type="checkbox" id="myLevel"
+                               ng-click="toggle('tmp.intercept.levels', cache.user.level)"
+                               ng-checked="tmp.intercept.levels.indexOf(cache.user.level) > -1">
+                        <label for="myLevel">{{cache.user.level}}</label>
+                        <input type="checkbox" id="plusOne"
+                               ng-click="toggle('tmp.intercept.levels', cache.user.level + 1)"
+                               ng-checked="tmp.intercept.levels.indexOf(cache.user.level + 1) > -1">
+                        <label for="plusOne">{{cache.user.level + 1}}</label>
+                    </div>
+                    <div ng-if="tmp.intercept.type == 'war'">
+                        <strong>Война</strong>
+                    </div>
+                    <div ng-if="['klan', 'war'].indexOf(tmp.intercept.type) > -1">
+                        <hr>
+                        <input type="number" id="maximalLevel" to-array
+                               ng-model="tmp.intercept.levels">
+                        <label for="maximalLevel">Максимальный уровень</label>
+                    </div>
+                    <hr>
+                    <span ng-repeat="action in tmp.intercept.actions">
+                        <img ng-src="{{action.scroll.image}}" title="{{action.scroll.description}}" width="40px">
+                        <span ng-if="action.durability > 1"> x{{action.durability}}</span>
+                        <span ng-if="!$last"> -&gt; </span>
+                    </span>
+
+                </div>
+                <button ng-click="interceptAdd()">Добавить</button>
+                <button ng-click="interceptReset()">Очистить</button>
+            </fieldset>
+            <fieldset ng-if="tmp.intercept.enemy">
+                <legend>Действия</legend>
+                <select ng-model="tmp.intercept.action.scroll"
+                        ng-options="scroll as scroll.displayName group by scroll.placeName for scroll in magic">
+                </select>
+                <hr>
+                Кол-во юзов: <input type="number"
+                                    placeholder="1"
+                                    ng-model="tmp.intercept.action.durability">
+                <br>
+                <input type="checkbox"
+                       id="breakActionsOnFail"
+                       ng-model="tmp.intercept.action.breakOnFail">
+                <label for="breakActionsOnFail">обрывать в случае неудачи</label>
+                <br>
+                <button ng-click="interceptAddAction()">Добавить</button>
+            </fieldset>
+        </td>
+        <!--{{tmp.intercept|json}}-->
+    </tr>
+    <tr>
+        <td colspan="2">
+            <fieldset>
+                <legend>На кого не будем нападать:</legend>
+                <input type="checkbox" id="iDodge" ng-model="config.intercept.class.dodge">
+                <label for="iDodge">Верт</label>
+                <input type="checkbox" id="iCrit" ng-model="config.intercept.class.crit">
+                <label for="iCrit">Крит</label>
+                <input type="checkbox" id="iTank" ng-model="config.intercept.class.tank">
+                <label for="iTank">Танк</label>
+                <hr>
+                <textarea rows="4" style="width: 100%;"
+                          ng-list="," ng-trim="true"
+                          ng-model="config.intercept.doNotIntercept">
+                </textarea>
+            </fieldset>
+        </td>
+    </tr>
+</table>

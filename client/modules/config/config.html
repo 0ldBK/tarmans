@@ -1,0 +1,84 @@
+<div ng-controller="ConfigCtrl">
+    <input type="checkbox" id="slider_out_chkbox" ng-model="configOpened" ng-change="saveConfig(!configOpened)">
+    <div id="slideout">
+        <div class="slider-text">
+            <label for="slider_out_chkbox">
+                <div class="vertical">
+                    <!--<b>☢</b>-->
+                    <img src="http://i.oldbk.com/i/klan/Tarmans.gif" alt="Плагин">
+                </div>
+            </label>
+        </div>
+        <div id="slideout_inner">
+            <div class="config">
+                <ul class="tabs">
+                    <li>
+                        <input type="radio" name="tabs" id="tab1" class="tab-selector" checked/>
+                        <label for="tab1" class="tab-label">Общие</label>
+                        <div id="tab-content1" class="tab-content">
+                            <table style="width: 95%">
+                                <tr>
+                                    <td style="vertical-align: top;width: 50%">
+                                        <fieldset>
+                                            <legend>Быстрый переход
+                                                <small style="color: red">&nbsp;&nbsp;&nbsp;{{locationErrorMessage}}</small>
+                                            </legend>
+                                            <select ng-model="tmp.location"
+                                                    ng-options="loc as loc for loc in location.points"
+                                                    ng-change="location.go(tmp.location)">
+                                                <option value="">Выберите локацию</option>
+                                            </select>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Красные ХП</legend>
+                                            <button ng-if="!scheduler.get('user::redHP')"
+                                                    ng-click="actions.enableRedHP();">Включить красные ХП
+                                            </button>
+                                            <button ng-if="scheduler.get('user::redHP')"
+                                                    ng-click="scheduler.clear('user::redHP')">Выключить красные ХП
+                                            </button>
+                                        </fieldset>
+                                        <div ng-repeat="module in cache.modules | filter:{location:'general'}"
+                                             show-template="module.template"
+                                        ></div>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <fieldset style="width: 100%">
+                                            <legend>настройки:</legend>
+                                            <input type="number" id="reloadFrameEvery"
+                                                   ng-model="config.reloadFrameEvery"
+                                                   style="width: 60px;">
+                                            <label for="reloadFrameEvery">каждые "{{config.reloadFrameEvery}}"сек. перегружать фрейм</label><br>
+                                            <input type="checkbox" id="notify" ng-model="config.flags.enableNotify">
+                                            <label for="notify">включить уведомления</label><br>
+                                            <input type="checkbox" id="mute" ng-model="config.flags.mute">
+                                            <label for="mute">выключить сообщения плагина</label><br>
+                                            <input type="checkbox" id="stats" ng-model="config.flags.showStatistics">
+                                            <label for="stats">статистика в чате</label><br>
+                                            <hr>
+                                            <input type="checkbox" id="useLabTicket" ng-model="config.flags.useLabTicket">
+                                            <label for="useLabTicket">Использовать пропуск в лабу,
+                                                <br> если таймаут больше
+                                                <input type="number" ng-model="config.useLabTicketTimeout" style="width: 75px;">
+                                                мин.
+                                            </label><br>
+                                        </fieldset>
+                                        <div ng-repeat="module in cache.modules | filter:{location:'checkboxes'}"
+                                             show-template="module.template"
+                                        ></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                    <li ng-repeat="module in cache.modules | filter:{location:'tab'}"
+                        ng-if="cache.server.modules[module.name].ok">
+                        <input type="radio" name="tabs" id="tab-{{module.name}}" class="tab-selector"/>
+                        <label for="tab-{{module.name}}" class="tab-label">{{module.label}}</label>
+                        <div id="tab-content-{{module.name}}" class="tab-content" show-template="module.template"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

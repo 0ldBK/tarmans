@@ -1,0 +1,64 @@
+<form class="form-horizontal" ng-submit="refresh()">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Клан</label>
+        <div class="col-sm-6">
+
+            <ui-select allow-clear ng-model="filter.clan" theme="bootstrap">
+                <ui-select-match placeholder="Выберите клан из списка">{{$select.selected.displayName || $select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="clan.name as clan in clans | filter: $select.search">
+                    <img ng-src="http://i.oldbk.com/i/align_{{clan.align}}.gif"
+                         ng-if="clan.align"
+                    >
+                    <img ng-src="http://i.oldbk.com/i/klan/{{clan.name}}.gif" alt="{{clan.name}}"
+                         ng-if="clan.name && (clan.name != '+' && clan.name !== '+invisible+')"
+                    >
+                    <span>{{(clan.displayName || clan.name) | highlight: $select.search}}</span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Склоннсть:</label>
+        <div class="col-sm-6">
+            <label>
+                <input type="checkbox" ng-model="filter.align['3']">
+                <img ng-src="http://i.oldbk.com/i/align_3.gif" style="height: 12px;margin-top: -5px;">Тьма
+            </label>
+            <label>
+                <input type="checkbox" ng-model="filter.align['6']">
+                <img ng-src="http://i.oldbk.com/i/align_6.gif" style="height: 12px;margin-top: -5px;">Свет
+            </label>
+            <label>
+                <input type="checkbox" ng-model="filter.align['2']">
+                <img ng-src="http://i.oldbk.com/i/align_2.gif" style="height: 12px;margin-top: -5px;">Нитраты
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Уровни:</label>
+        <div class="col-sm-6">
+            <input type="text" ng-model="filter.levels" ng-list="," ng-trim="true">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Обновить список</button>
+</form>
+
+<table class="table">
+    <tr ng-repeat="player in players">
+        <td>
+            <img ng-src="http://i.oldbk.com/i/align_{{player.align}}.gif"
+                 ng-if="player.align"
+            >
+            <img ng-src="http://i.oldbk.com/i/klan/{{player.clan}}.gif" alt="{{player.clan}}"
+                 ng-if="player.clan"
+            >
+            <strong>{{player.login}}&nbsp;[{{player.level}}]</strong>
+            <a ng-href="http://capitalcity.oldbk.com/inf.php?{{player.id}}" target="_blank">
+                <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11" alt="Инф. о {{player.login}}">
+            </a>
+        </td>
+        <td>{{player.status}}</td>
+        <td>{{player.room}}</td>
+        <td>{{player.lasttime}}</td>
+    </tr>
+</table>

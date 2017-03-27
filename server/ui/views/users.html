@@ -1,0 +1,61 @@
+<table class="table">
+    <tr>
+        <td style="width:350px;">
+            <ul class="list-group">
+                <li ng-repeat="user in users"
+                    class="list-group-item"
+                    style="font-size: 12px;"
+                    ng-class="{'list-group-item-info': $parent.active.id === user.id}"
+                    ng-click="$parent.active = user"
+                >
+                    <span class="badge text-success" ng-show="user.session">online</span>
+                    <img ng-src="http://i.oldbk.com/i/align_{{user.align}}.gif"
+                         ng-if="user.align"
+                    >
+                    <img ng-src="http://i.oldbk.com/i/klan/{{user.klan}}.gif" alt="{{user.klan}}"
+                         ng-if="user.klan"
+                    >
+                    <strong>{{user.login}}&nbsp;[{{user.level}}]</strong>
+                    <a ng-href="http://capitalcity.oldbk.com/inf.php?{{user.id}}" target="_blank">
+                        <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11" alt="Инф. о {{user.login}}">
+                    </a>
+                    <br>
+                    <sub>
+                        {{user.location}}
+                        <a ng-show="user.battle" ng-href="http://capitalcity.oldbk.com/logs.php?log={{user.battle.id}}">
+                            <b>⚔</b>
+                        </a>
+                    </sub>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <uib-tabset ng-if="active.id">
+                <uib-tab heading="Графики">
+                    <div ng-repeat="graph in graphs">
+                        <canvas id="line-{{active.id}}-{{graph.name}}" class="chart chart-line" chart-data="graph.data"
+                                chart-labels="graph.labels" chart-legend="true" chart-series="graph.series">
+                        </canvas>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Настройки" ng-if="iam.resources.admin">
+                    <input type="checkbox" id="accessToUi"
+                           ng-checked="!!active.resources.ui"
+                           ng-click="active.resources.ui=!active.resources.ui">
+                    <label for="accessToUi">Доступ к этому сайту</label>
+                    <hr>
+                    Модули:
+                    <div class="input-group" ng-repeat="(name, module) in modules">
+                        <input type="checkbox" id="module-{{module.name}}"
+                               ng-checked="active.resources.modules.indexOf(name) > -1"
+                               ng-click="toggle(active.resources.modules, name)"
+                        >
+                        <label for="module-{{module.name}}" class="control-label">{{module.label}}</label>
+                    </div>
+                    <input type="button" ng-click="updateResources()" value="Сохранить">
+                    {{active | json}}
+                </uib-tab>
+            </uib-tabset>
+        </td>
+    </tr>
+</table>

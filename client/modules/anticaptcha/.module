@@ -1,0 +1,6 @@
+{
+  "name": "anticaptcha",
+  "label": "Антикапча",
+  "template": "anticaptcha/config.html",
+  "location": "tab"
+}

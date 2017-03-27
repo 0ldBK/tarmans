@@ -1,0 +1,6 @@
+{
+  "name": "intercept",
+  "label": "Перехват",
+  "template": "intercept/config.html",
+  "location": "tab"
+}

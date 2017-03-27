@@ -1,0 +1,108 @@
+{
+  "name": "Tarman's OldBK Plugin",
+  "version": "0.6.24",
+  "update_url": "https://DOMAIN/update.xml",
+  "icons": {
+    "16": "assets/icons/Tarmans_16.png",
+    "48": "assets/icons/Tarmans_48.png",
+    "128": "assets/icons/Tarmans_128.png"
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "idle",
+    "activeTab",
+    "cookies",
+    "storage",
+    "notifications",
+    "declarativeContent",
+    "webRequest",
+    "declarativeWebRequest",
+    "http://DOMAIN/*",
+    "http://oldbk.com/*",
+    "http://capitalcity.oldbk.com/*",
+    "http://*.oldbk.com/*",
+    "http://localhost:8080/*",
+    "*://anti-captcha.com/*"
+  ],
+  "page_action": {
+    "default_icon": "assets/icons/Tarmans.png",
+    "default_popup": "modules/popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "core/background.js"
+    ],
+    "persistent": true
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "http://capitalcity.oldbk.com/battle.php"
+      ],
+      "js": [
+        "core/presets.js",
+        "assets/angular/angular.js",
+        "assets/angular/angular-cookies.js",
+        "core/shim.js",
+        "core/extension.js",
+        "core/helpers.js",
+        "core/scheduler.js",
+        "core/queue.js",
+        "core/scroll.js",
+        "core/assets.js",
+        "modules/tools/tools.js",
+        "modules/tools/klan.js",
+        "modules/tools/user.js",
+        "modules/tools/parsers.js",
+        "modules/location/location.js",
+        "modules/server/server.js",
+        "modules/chat/chat.actions.js",
+        "modules/user/user.actions.js",
+        "modules/user/user.processors.js",
+        "modules/config/config.js"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "all_frames": true,
+      "matches": [
+        "http://chat.oldbk.com/ch.php?show=*"
+      ],
+      "js": [
+        "modules/chat/chat.handler.js"
+      ]
+    },
+    {
+      "run_at": "document_start",
+      "all_frames": true,
+      "matches": [
+        "http://*.oldbk.com/*"
+      ],
+      "js": [
+        "modules/frames/on-start.js"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "all_frames": true,
+      "matches": [
+        "http://*.oldbk.com/*"
+      ],
+      "js": [
+        "modules/frames/on-end.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "/assets/icons/Tarmans_128.png",
+    "/assets/sounds/trap_notify.mp3",
+    "/assets/sounds/exchange_notify.mp3",
+    "/assets/klans.json",
+    "/assets/weapons.json",
+    "modules/config/config.html",
+    "modules/config/config.css"
+  ]
+}

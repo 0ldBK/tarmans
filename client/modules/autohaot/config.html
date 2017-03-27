@@ -1,0 +1,45 @@
+<fieldset>
+    <legend>
+        <label for="autohaotEnable">Автохаот</label>
+        <input type="checkbox" id="autohaotEnable" ng-model="config.autohaot.enabled">
+    </legend>
+    Одеть комплект перед боем:
+    <select ng-options="complect as complect for (complect, href) in cache.user.complects"
+            ng-model="config.autohaot.complect">
+        <option value="">Не менять комплект</option>
+    </select>
+    <hr>
+    Выполняем квест: <input type="text" ng-model="config.autohaot.quest">
+    <code>
+        {{cache.user.effects[config.autohaot.quest].description}}
+    </code>
+    <hr>
+    <label for="timeout">Таймаут(мин) &lt;=</label>
+    <input type="number" id="timeout" ng-model="config.autohaot.timeout"><br>
+    <label for="minLevel">Мин уровень</label>
+    <input type="number" id="minLevel" ng-model="config.autohaot.minLevel"><br>
+    <label for="maxLevel">Макс уровень</label>
+    <input type="number" id="maxLevel" ng-model="config.autohaot.maxLevel"><br>
+    <label for="blood">Только Кровавые заявки:</label>
+    <input type="checkbox" id="blood" ng-model="config.autohaot.blood"><br>
+    <label for="random">Только Рандомные заявки:</label>
+    <input type="checkbox" id="random" ng-model="config.autohaot.random"><br>
+    <label for="autozayavka">Только Автозаявки:</label>
+    <input type="checkbox" id="autozayavka" ng-model="config.autohaot.autozayavka"><br>
+    <label for="flowers">Только Букетные бои:</label>
+    <input type="checkbox" id="flowers" ng-model="config.autohaot.flowers"><br>
+    <hr>
+    <label for="maxUsers">Заявка на чел (до):</label>
+    <input type="number" id="maxUsers" ng-model="config.autohaot.maxUsers"><br>
+    <label for="minUsers">Количество чел в заявке: >= </label>
+    <input type="number" id="minUsers" ng-model="config.autohaot.minUsers"><br>
+    <label for="minHP">Сколько ХП должно быть (максимум):</label>
+    <input type="number" id="minHP" ng-model="config.autohaot.minHP"><br>
+    <label for="percentHP">%% ХП для принятия заявки:</label>
+    <input type="number" id="percentHP" ng-model="config.autohaot.percentHP">
+    <hr>
+    <input type="checkbox" id="useSandwich" ng-model="config.autohaot.useSandwich">
+    <label for="useSandwich">Хавать бутер</label><br>
+    <label for="useSandwichMinHP">Хавать бутер если ХП меньше: </label>
+    <input type="number" id="useSandwichMinHP" ng-model="config.autohaot.useSandwichMinHP">
+</fieldset>

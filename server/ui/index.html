@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="scripts/vendors/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="scripts/vendors/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="scripts/vendors/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="scripts/vendors/angular-ui-select/dist/select.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="uiApp">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#js-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#/">Плагинка</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: location.$$path == '/'}"
+                        ng-if="iam.resources.admin"><a href="#/">Биржа</a></li>
+                    <li ng-class="{active: location.$$path == '/users'}"><a ng-href="#/users">Юзеры</a></li>
+                    <li ng-class="{active: location.$$path == '/players'}"><a ng-href="#/players">Игроки</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div ng-view=""></div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+    </div>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="scripts/vendors/jquery/dist/jquery.js"></script>
+<script src="scripts/vendors/angular/angular.js"></script>
+<script src="scripts/vendors/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="scripts/vendors/angular-animate/angular-animate.js"></script>
+<script src="scripts/vendors/angular-aria/angular-aria.js"></script>
+<script src="scripts/vendors/angular-cookies/angular-cookies.js"></script>
+<script src="scripts/vendors/angular-messages/angular-messages.js"></script>
+<script src="scripts/vendors/angular-resource/angular-resource.js"></script>
+<script src="scripts/vendors/angular-route/angular-route.js"></script>
+<script src="scripts/vendors/angular-sanitize/angular-sanitize.js"></script>
+<script src="scripts/vendors/angular-ui-select/dist/select.js"></script>
+<script src="scripts/vendors/Chart.js/Chart.js"></script>
+<script src="scripts/vendors/angular-chart.js/dist/angular-chart.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/exchange.js"></script>
+<script src="scripts/controllers/users.js"></script>
+<script src="scripts/controllers/players.js"></script>
+<!-- endbuild -->
+</body>
+</html>

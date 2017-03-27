@@ -1,0 +1,47 @@
+<fieldset>
+    <legend>Автолекарь <input type="checkbox" ng-model="config.stopWords['actions::cure'].enabled"></legend>
+    Одеть комплект перед лечением:
+    <select ng-model="config.doc.complect">
+        <option value="">Не менять комплект</option>
+        <option ng-repeat="(name, href) in cache.user.complects" value="{{name}}">
+            {{name}}
+        </option>
+    </select>
+    <hr>
+    Чаты:
+    <input type="checkbox" id="commonChat"
+           ng-click="toggle(config.stopWords['actions::cure'].channels, 1)"
+           ng-checked="config.stopWords['actions::cure'].channels.indexOf(1) > -1">
+    <label for="commonChat">Общий</label>
+    <input type="checkbox" id="privateChat"
+           ng-click="toggle(config.stopWords['actions::cure'].channels, 2)"
+           ng-checked="config.stopWords['actions::cure'].channels.indexOf(2) > -1">
+    <label for="privateChat">Приват</label>
+    <input type="checkbox" id="klanChat"
+           ng-click="toggle(config.stopWords['actions::cure'].channels, 3)"
+           ng-checked="config.stopWords['actions::cure'].channels.indexOf(3) > -1">
+    <label for="klanChat">Клан</label>
+    <input type="checkbox" id="shoppingChat"
+           ng-click="toggle(config.stopWords['actions::cure'].channels, 5)"
+           ng-checked="config.stopWords['actions::cure'].channels.indexOf(5) > -1">
+    <label for="shoppingChat">Торговый</label>
+    <hr>
+    Бег(ж)ать:
+    <input type="checkbox" id="moveToUser" ng-model="config.doc.moveToUser">
+    <label for="moveToUser">за больным</label>
+    <input type="checkbox" id="moveToReload" ng-model="config.doc.moveToReload">
+    <label for="moveToReload">перезаряжаться</label>
+    <input type="checkbox" id="moveBack" ng-model="config.doc.moveBack">
+    <label for="moveBack">назад</label>
+    <hr>
+    Искать свитки в:
+    <input type="checkbox" id="searchIninventory" ng-model="config.doc.scrollPlaces.inventory">
+    <label for="searchIninventory">рюкзаке</label>
+    <input type="checkbox" id="searchInRelicts" ng-model="config.doc.scrollPlaces.relict">
+    <label for="searchInRelicts">реликтах</label>
+    <input type="checkbox" id="searchInAbilities" ng-model="config.doc.scrollPlaces.ability">
+    <label for="searchInAbilities">абилках</label>
+    <hr>
+    Стоп слова:
+    <textarea style="width: 100%;" ng-model="config.doc.stopWords"></textarea>
+</fieldset>

@@ -1,0 +1,117 @@
+{
+    "rules": {
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "brace-style": 2,
+        "func-style": 0,
+        "guard-for-in": 2,
+        "no-fallthrough": 0,
+        "no-floating-decimal": 2,
+        "no-nested-ternary": 2,
+        "no-underscore-dangle": 0,
+        "no-console": 0,
+        "quotes": [
+            2,
+            "single"
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "radix": 2,
+        "wrap-iife": 0,
+        "valid-jsdoc": [
+            0
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "curly": [
+            2,
+            "all"
+        ],
+        "operator-linebreak": [
+            2,
+            "after"
+        ],
+        "camelcase": [
+            2,
+            {
+                "properties": "never"
+            }
+        ],
+        "max-len": [
+            2,
+            120
+        ],
+        "no-mixed-spaces-and-tabs": 2,
+        "no-trailing-spaces": 2,
+        "space-unary-ops": [
+            2,
+            {
+                "nonwords": false,
+                "overrides": {}
+            }
+        ],
+        "consistent-this": [
+            2,
+            "self"
+        ],
+        "keyword-spacing": [
+            2,
+            {}
+        ],
+        "space-infix-ops": 2,
+        "space-before-blocks": [
+            2,
+            "always"
+        ],
+        "eol-last": 2,
+        "array-bracket-spacing": [
+            2,
+            "never",
+            {
+                "singleValue": false
+            }
+        ],
+        "space-in-parens": [
+            2,
+            "never"
+        ],
+        "no-multiple-empty-lines": 2,
+        "require-yield": 0
+    },
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "ecmaFeatures": {
+        "classes": true,
+        "blockBindings": true,
+        "arrowFunctions": true,
+        "binaryLiterals": true,
+        "destructuring": true,
+        "defaultParams": true,
+        "templateStrings": true
+    },
+    "globals": {
+        "angular": true,
+        "$injector": true,
+        "E": true,
+        "sphere": true,
+        "DOMCompiler": true,
+        "Scroll": true,
+        "Audio": true,
+        "chrome": true
+    }
+}

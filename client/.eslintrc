@@ -1,0 +1,52 @@
+{
+  "rules": {
+    "indent": [
+      2,
+      4,
+      {"SwitchCase": 1}
+    ],
+    "brace-style": 2,
+    "func-style": 0,
+    "guard-for-in": 2,
+    "no-fallthrough": 0,
+    "no-floating-decimal": 2,
+    "no-nested-ternary": 2,
+    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "quotes": [
+      2,
+      "single"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "radix": 2,
+    "wrap-iife": 0,
+    "keyword-spacing": 2,
+    "valid-jsdoc": [
+      0
+    ],
+    "semi": [
+      2,
+      "always"
+    ]
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "globals": {
+    "angular": true,
+    "$injector": true,
+    "E": true,
+    "sphere": true,
+    "DOMCompiler": true,
+    "Scroll": true,
+    "Audio": true,
+    "chrome": true
+  }
+}

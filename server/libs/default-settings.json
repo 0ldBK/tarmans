@@ -1,0 +1,477 @@
+{
+  "hpalert": true,
+  "lab": {
+    "autoheal": [
+      "1",
+      2,
+      0,
+      99,
+      90,
+      0
+    ],
+    "antidot": [
+      9,
+      false
+    ],
+    "attack": [
+      [
+        200,
+        300
+      ],
+      [
+        300,
+        400
+      ],
+      {
+        "0": false,
+        "1": false
+      }
+    ],
+    "start": true,
+    "enabled": true,
+    "pause": false,
+    "leave": true,
+    "leaveheal": true,
+    "autodrop": [
+      true,
+      false,
+      false
+    ],
+    "enter": false,
+    "questenter": true,
+    "questtake": true,
+    "heroic": true,
+    "exit": true,
+    "set": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "use666": true,
+    "step": [
+      3.1,
+      6,
+      1.5,
+      6,
+      false
+    ],
+    "dealer": true,
+    "sellarts": true,
+    "sellfigures": true,
+    "sellartsafter": true,
+    "stopifundress": 3,
+    "artefacts": [
+      false,
+      [
+        "Меч Кромуса",
+        false
+      ],
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "opendoors": [
+      [
+        "Никого",
+        "0"
+      ],
+      [
+        "Монстр",
+        1
+      ],
+      [
+        "Пандора",
+        1
+      ],
+      [
+        "Лечилка",
+        0
+      ],
+      [
+        "Аэлла",
+        1
+      ],
+      [
+        "Грифон",
+        1
+      ],
+      [
+        "Химера",
+        1
+      ],
+      [
+        "Гидра",
+        1
+      ],
+      [
+        "Пирагмон",
+        1
+      ],
+      [
+        "Амфисбена",
+        "1"
+      ],
+      [
+        "Сын Ареса",
+        "1"
+      ]
+    ],
+    "hpbosses": [
+      [
+        "Аэлла",
+        "250"
+      ],
+      [
+        "Грифон",
+        "250"
+      ],
+      [
+        "Химера",
+        "300"
+      ],
+      [
+        "Гидра",
+        "300"
+      ],
+      [
+        "Пирагмон",
+        "300"
+      ],
+      [
+        "Амфисбена",
+        "400"
+      ],
+      [
+        "Сын Ареса",
+        "500"
+      ]
+    ],
+    "leavequest": false,
+    "dress": {
+      "0": true,
+      "1": false,
+      "4": false,
+      "5": false,
+      "6": false,
+      "7": false
+    },
+    "sellcheque": true,
+    "sellcharms2": true,
+    "dealerundress": true,
+    "setexit": true,
+    "setenter": true,
+    "sellcharms3": false,
+    "uselabkey": false,
+    "abilities": {
+      "1": false
+    },
+    "saveonserver": true,
+    "leavedoor": true
+  },
+  "battle": {
+    "listmobs": [
+      "Арг",
+      "Бронт",
+      "Стероп",
+      "Эвриала",
+      "Сфено",
+      "Медуза",
+      "Гиес",
+      "Алкионей",
+      "Паллант",
+      "Котт",
+      "Аэлла",
+      "Бриарей",
+      "Грифон",
+      "Астерий",
+      "Сын Аресa",
+      "Сын Ареса"
+    ],
+    "auto": "strike",
+    "enabled": true,
+    "start": true,
+    "stophp": 0,
+    "curehp": 200,
+    "curetype": "onlyscrolls",
+    "stophpah": 0,
+    "curehpah": 0,
+    "curetypeah": "firstscrolls",
+    "stophprs": 0,
+    "curehprs": 200,
+    "curetypers": "firstscrolls",
+    "atype": 0,
+    "wewin": "1",
+    "esort": 0,
+    "design": "0",
+    "answertime": 90,
+    "style": {
+      "block": {
+        "head": "100",
+        "body": "100",
+        "groin": "100",
+        "legs": "100"
+      },
+      "strike": {
+        "head": "100",
+        "body": "100",
+        "groin": "100",
+        "legs": "100"
+      },
+      "critac": {
+        "min": 0,
+        "max": 11
+      },
+      "critad": {
+        "min": 0,
+        "max": 10
+      },
+      "dodgeac": {
+        "min": 0,
+        "max": 11
+      },
+      "dodgead": {
+        "min": 0,
+        "max": 11
+      },
+      "tankac": {
+        "min": 0,
+        "max": 11
+      },
+      "tankad": {
+        "min": 0,
+        "max": 11
+      },
+      "other": {
+        "min": 0,
+        "max": 10
+      },
+      "bad": {
+        "min": 0,
+        "max": 11
+      },
+      "mob": {
+        "min": 0,
+        "max": 99
+      },
+      "inviz": {
+        "min": 0,
+        "max": 11
+      }
+    },
+    "marinad": "0",
+    "resetpause": true,
+    "risthp": false,
+    "listusers": [
+      "Пятницо"
+    ],
+    "autokill": true,
+    "ristlast": 50,
+    "showt": true,
+    "showl": true,
+    "showcl": true,
+    "pause": false,
+    "autoanswer": 110,
+    "showi": "0",
+    "leaveclons": true
+  },
+  "base": {
+    "chatsize": "67.5",
+    "chatupdate": true,
+    "chatoff": false,
+    "chatolddesign": false,
+    "consoleerr": false,
+    "showinfo": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "chatdeltab": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      false,
+      true,
+      null,
+      false
+    ],
+    "update": {
+      "info": 60,
+      "haos": 60,
+      "sost": 60,
+      "flood": -1,
+      "eat": 180,
+      "refresh": "600"
+    },
+    "flood": "",
+    "sounds": {
+      "volume": "10",
+      "system": true,
+      "private": true,
+      "heal": false,
+      "attack": false,
+      "trap": false,
+      "friend": false,
+      "eattack": false,
+      "endlaba": true
+    },
+    "dayofstandoff": 1457744400000,
+    "openlinks": false,
+    "nshowinfo": {
+      "0": true,
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true,
+      "6": true,
+      "9": true,
+      "10": false,
+      "16": true
+    },
+    "repairalert": "2",
+    "buffname": "",
+    "buffall": "1",
+    "buffauto": false,
+    "redhp": false,
+    "floodtime": "-1",
+    "channel": "8",
+    "showsets": "",
+    "bookmark": "0",
+    "pack": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": false
+    },
+    "autobatl": true,
+    "chaosalert": "",
+    "external": false
+  },
+  "outcity": {
+    "attackhp": 500,
+    "quests": {
+      "Дикий зверь": {
+        "variant": "1"
+      }
+    },
+    "start": true
+  },
+  "ruines": {
+    "enabled": true
+  },
+  "ruins": {
+    "getdrop": false,
+    "mapsize": "200",
+    "mappost": 0,
+    "mapposr": 300
+  },
+  "headhunter": {
+    "priority": "1",
+    "aligns": {
+      "0": false,
+      "2": false,
+      "3": false,
+      "6": true
+    },
+    "enemies": [
+      ""
+    ],
+    "type": "2",
+    "enabled": true,
+    "level": {
+      "min": "11",
+      "max": "10"
+    },
+    "autoinsert": true,
+    "nextbattle": true
+  },
+  "haot": {
+    "autoonly": false,
+    "withblood": "3",
+    "maxtimeout": "3",
+    "btype": {
+      "1": false,
+      "3": true,
+      "7": false,
+      "21": false
+    },
+    "autoheal": false,
+    "israndom": "0",
+    "maxstarttime": "10",
+    "enabled": true,
+    "bfilter": false,
+    "bcreators": [
+      ""
+    ]
+  },
+  "healer": {
+    "enabled": true
+  },
+  "autobattle": {
+    "injureheal": true,
+    "minhp": 450,
+    "maxhp": 1219,
+    "gotolab": true,
+    "waitcure": true,
+    "artrepair": false,
+    "autorepair": "2",
+    "questtype": "1",
+    "room": "Торговый зал",
+    "israndom": false,
+    "btype": false,
+    "ztype": "0",
+    "autostart": true,
+    "bcreate": false,
+    "active": false,
+    "inbattle": false,
+    "startime": "300"
+  },
+  "autolord": {
+    "curetype": "25",
+    "bowls": {
+      "2": true,
+      "3": true
+    },
+    "active": false,
+    "noscrolls": "15",
+    "nocharges": "10",
+    "noitems": "14",
+    "eatbuff": "",
+    "fullhp": false
+  },
+  "autorist": {
+    "inbattle": true,
+    "active": false,
+    "ready": false,
+    "noscrolls": "15",
+    "creator": false,
+    "pass": "123",
+    "bcreators": [
+      "Deorg"
+    ],
+    "go": false,
+    "nocharges": "10",
+    "noitems": "14",
+    "autorepair": "2",
+    "familycoat": "1",
+    "eatbuff": "",
+    "fullhp": false
+  }
+}

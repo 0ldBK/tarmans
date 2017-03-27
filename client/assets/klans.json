@@ -1,0 +1,770 @@
+[
+  {
+    "name": "Abaddons - BlackSotnya",
+    "id": 514
+  },
+  {
+    "name": "AD - ADRecruits",
+    "id": 323
+  },
+  {
+    "name": "Alienss",
+    "id": 528
+  },
+  {
+    "name": "Alkahest",
+    "id": 158
+  },
+  {
+    "name": "AlmasDelDiablo",
+    "id": 456
+  },
+  {
+    "name": "Amazon",
+    "id": 360
+  },
+  {
+    "name": "ANARCHY - SonsOfAnarchy",
+    "id": 404
+  },
+  {
+    "name": "Angerofdarkness - RAodess",
+    "id": 50
+  },
+  {
+    "name": "Animals",
+    "id": 339
+  },
+  {
+    "name": "Apocalipsys - ApoRecruits",
+    "id": 71
+  },
+  {
+    "name": "Archangels",
+    "id": 141
+  },
+  {
+    "name": "Armada",
+    "id": 140
+  },
+  {
+    "name": "ARS",
+    "id": 387
+  },
+  {
+    "name": "Asgard",
+    "id": 463
+  },
+  {
+    "name": "Assassins - JuniorAssassin",
+    "id": 131
+  },
+  {
+    "name": "AssassinsCreed",
+    "id": 381
+  },
+  {
+    "name": "AT",
+    "id": 490
+  },
+  {
+    "name": "AWL",
+    "id": 403
+  },
+  {
+    "name": "BadBoys",
+    "id": 267
+  },
+  {
+    "name": "BalticNest",
+    "id": 492
+  },
+  {
+    "name": "BBoys",
+    "id": 488
+  },
+  {
+    "name": "BBrothers - DP",
+    "id": 501
+  },
+  {
+    "name": "Bears - YoungBears",
+    "id": 245
+  },
+  {
+    "name": "Bersercs",
+    "id": 189
+  },
+  {
+    "name": "BiUSSR - CCCP",
+    "id": 473
+  },
+  {
+    "name": "BlackAces",
+    "id": 301
+  },
+  {
+    "name": "BlackFlame - DarkAngels",
+    "id": 115
+  },
+  {
+    "name": "BlackRiders - YoungRiders",
+    "id": 373
+  },
+  {
+    "name": "borw",
+    "id": 187
+  },
+  {
+    "name": "BoU",
+    "id": 84
+  },
+  {
+    "name": "BRATSTVO",
+    "id": 317
+  },
+  {
+    "name": "Brigada - ValiantBrigada",
+    "id": 31
+  },
+  {
+    "name": "Catchers",
+    "id": 493
+  },
+  {
+    "name": "Cheburators",
+    "id": 325
+  },
+  {
+    "name": "Church",
+    "id": 515
+  },
+  {
+    "name": "CID - Imperium",
+    "id": 112
+  },
+  {
+    "name": "Comanches - RComanches",
+    "id": 290
+  },
+  {
+    "name": "Corporation",
+    "id": 517
+  },
+  {
+    "name": "Cossacks",
+    "id": 470
+  },
+  {
+    "name": "DarkAlliance",
+    "id": 11
+  },
+  {
+    "name": "DarkBats",
+    "id": 338
+  },
+  {
+    "name": "DarkClan - DCR",
+    "id": 29
+  },
+  {
+    "name": "DarkImmortals - Mortals",
+    "id": 472
+  },
+  {
+    "name": "DarkInLife - FFS",
+    "id": 238
+  },
+  {
+    "name": "DarkSIN",
+    "id": 304
+  },
+  {
+    "name": "DarkTower",
+    "id": 254
+  },
+  {
+    "name": "DarkZenit - RDZ",
+    "id": 51
+  },
+  {
+    "name": "DCC",
+    "id": 523
+  },
+  {
+    "name": "DeathDragons",
+    "id": 530
+  },
+  {
+    "name": "DeepHell",
+    "id": 132
+  },
+  {
+    "name": "DefOL",
+    "id": 167
+  },
+  {
+    "name": "Diablo",
+    "id": 171
+  },
+  {
+    "name": "DnD - Merciless",
+    "id": 322
+  },
+  {
+    "name": "Doom",
+    "id": 363
+  },
+  {
+    "name": "DragonBreath",
+    "id": 282
+  },
+  {
+    "name": "Dynamo",
+    "id": 12
+  },
+  {
+    "name": "DynamoKiev - RDK",
+    "id": 464
+  },
+  {
+    "name": "Equilibrium - Wanderers",
+    "id": 507
+  },
+  {
+    "name": "Evial",
+    "id": 457
+  },
+  {
+    "name": "FaF",
+    "id": 475
+  },
+  {
+    "name": "FallenAngels - RFA",
+    "id": 30
+  },
+  {
+    "name": "FallenStar - RFallenStar",
+    "id": 465
+  },
+  {
+    "name": "Family - Agents",
+    "id": 44
+  },
+  {
+    "name": "FieryHellHunters - OutCast",
+    "id": 469
+  },
+  {
+    "name": "Fighters",
+    "id": 494
+  },
+  {
+    "name": "FlameLiberty",
+    "id": 477
+  },
+  {
+    "name": "FoS",
+    "id": 351
+  },
+  {
+    "name": "FreeLife",
+    "id": 377
+  },
+  {
+    "name": "Freemen - RFreemen",
+    "id": 27
+  },
+  {
+    "name": "FuriousShadow",
+    "id": 522
+  },
+  {
+    "name": "GamerZ - RecruitsGamerZ",
+    "id": 159
+  },
+  {
+    "name": "Gangsters",
+    "id": 380
+  },
+  {
+    "name": "GB",
+    "id": 347
+  },
+  {
+    "name": "GIK",
+    "id": 408
+  },
+  {
+    "name": "GOS",
+    "id": 487
+  },
+  {
+    "name": "GP",
+    "id": 505
+  },
+  {
+    "name": "GtX - SS",
+    "id": 232
+  },
+  {
+    "name": "Guards",
+    "id": 481
+  },
+  {
+    "name": "Haiducii",
+    "id": 543
+  },
+  {
+    "name": "HaliGali - DarkSmiles",
+    "id": 116
+  },
+  {
+    "name": "Harbour",
+    "id": 24
+  },
+  {
+    "name": "Hell",
+    "id": 540
+  },
+  {
+    "name": "HellRiders",
+    "id": 527
+  },
+  {
+    "name": "Helpers",
+    "id": 327
+  },
+  {
+    "name": "HoD - RHoD",
+    "id": 196
+  },
+  {
+    "name": "Hooligans",
+    "id": 513
+  },
+  {
+    "name": "HuRRicane",
+    "id": 308
+  },
+  {
+    "name": "Ice",
+    "id": 138
+  },
+  {
+    "name": "IcyHorde",
+    "id": 413
+  },
+  {
+    "name": "Igis",
+    "id": 123
+  },
+  {
+    "name": "IMPS",
+    "id": 38
+  },
+  {
+    "name": "Independence",
+    "id": 107
+  },
+  {
+    "name": "Infinity",
+    "id": 480
+  },
+  {
+    "name": "JackalClan",
+    "id": 35
+  },
+  {
+    "name": "JFF",
+    "id": 498
+  },
+  {
+    "name": "Justice",
+    "id": 139
+  },
+  {
+    "name": "JustKiev",
+    "id": 367
+  },
+  {
+    "name": "Kiev - Academy",
+    "id": 102
+  },
+  {
+    "name": "King - RKing",
+    "id": 269
+  },
+  {
+    "name": "KNL - RecruitsKNL",
+    "id": 2
+  },
+  {
+    "name": "KOLHOZ",
+    "id": 512
+  },
+  {
+    "name": "KOtS",
+    "id": 313
+  },
+  {
+    "name": "KpeMeHb",
+    "id": 434
+  },
+  {
+    "name": "LastLegion",
+    "id": 226
+  },
+  {
+    "name": "legion",
+    "id": 15
+  },
+  {
+    "name": "LIETUVA",
+    "id": 536
+  },
+  {
+    "name": "LionsFamily",
+    "id": 399
+  },
+  {
+    "name": "LivonianOrder",
+    "id": 258
+  },
+  {
+    "name": "LL",
+    "id": 454
+  },
+  {
+    "name": "Longriders",
+    "id": 9
+  },
+  {
+    "name": "Marauders - Ilumination",
+    "id": 368
+  },
+  {
+    "name": "MataViolaControla",
+    "id": 476
+  },
+  {
+    "name": "MensClub",
+    "id": 337
+  },
+  {
+    "name": "Mercenaries - RecruitsMercenaries",
+    "id": 26
+  },
+  {
+    "name": "MiB - RMiB",
+    "id": 39
+  },
+  {
+    "name": "MoldGuild",
+    "id": 310
+  },
+  {
+    "name": "Mysty",
+    "id": 388
+  },
+  {
+    "name": "NaVi",
+    "id": 168
+  },
+  {
+    "name": "NewAngels",
+    "id": 237
+  },
+  {
+    "name": "NewTime",
+    "id": 390
+  },
+  {
+    "name": "Nightmare",
+    "id": 268
+  },
+  {
+    "name": "NiP - RNiP",
+    "id": 161
+  },
+  {
+    "name": "NRG",
+    "id": 466
+  },
+  {
+    "name": "OBOROTNI - RecruitsOBOROTNI",
+    "id": 99
+  },
+  {
+    "name": "Odessa",
+    "id": 90
+  },
+  {
+    "name": "Olimp - ROlimp",
+    "id": 461
+  },
+  {
+    "name": "OverseerS - RecruitsOverseerS",
+    "id": 170
+  },
+  {
+    "name": "Padonki - Padonchiki",
+    "id": 23
+  },
+  {
+    "name": "PANDEMONIUM",
+    "id": 256
+  },
+  {
+    "name": "PhoenixClan",
+    "id": 539
+  },
+  {
+    "name": "Photon",
+    "id": 142
+  },
+  {
+    "name": "PM",
+    "id": 503
+  },
+  {
+    "name": "PNH",
+    "id": 348
+  },
+  {
+    "name": "POMAIIIKu - POMAIIIKuBro",
+    "id": 354
+  },
+  {
+    "name": "Pride - RPride",
+    "id": 342
+  },
+  {
+    "name": "Punisher - RPunisher",
+    "id": 379
+  },
+  {
+    "name": "Qizilbaslar - GreyShadows",
+    "id": 526
+  },
+  {
+    "name": "RaZvratniki",
+    "id": 230
+  },
+  {
+    "name": "RedinarD",
+    "id": 210
+  },
+  {
+    "name": "Renegades",
+    "id": 534
+  },
+  {
+    "name": "RFamily",
+    "id": 157
+  },
+  {
+    "name": "RIX",
+    "id": 482
+  },
+  {
+    "name": "RJustice - JJ",
+    "id": 264
+  },
+  {
+    "name": "ROD",
+    "id": 542
+  },
+  {
+    "name": "ROS",
+    "id": 169
+  },
+  {
+    "name": "Royal",
+    "id": 460
+  },
+  {
+    "name": "RST - EvilFighters",
+    "id": 386
+  },
+  {
+    "name": "rаdminion",
+    "id": 458
+  },
+  {
+    "name": "ScoRPiuS",
+    "id": 222
+  },
+  {
+    "name": "ScreamOfDeath - BS",
+    "id": 6
+  },
+  {
+    "name": "SecondReality",
+    "id": 76
+  },
+  {
+    "name": "SemB",
+    "id": 291
+  },
+  {
+    "name": "ShadowKnights",
+    "id": 407
+  },
+  {
+    "name": "SionisPrioratus",
+    "id": 541
+  },
+  {
+    "name": "Skillet",
+    "id": 415
+  },
+  {
+    "name": "SN",
+    "id": 506
+  },
+  {
+    "name": "SonicTeam",
+    "id": 272
+  },
+  {
+    "name": "SpaceInvaders - RSInvaders",
+    "id": 155
+  },
+  {
+    "name": "Spartans",
+    "id": 151
+  },
+  {
+    "name": "Spire",
+    "id": 307
+  },
+  {
+    "name": "SPoAN",
+    "id": 7
+  },
+  {
+    "name": "Stalkers - TibetMonks",
+    "id": 16
+  },
+  {
+    "name": "Story",
+    "id": 172
+  },
+  {
+    "name": "Strongs",
+    "id": 496
+  },
+  {
+    "name": "STS",
+    "id": 366
+  },
+  {
+    "name": "Sumerki - RecruitsSumerki",
+    "id": 391
+  },
+  {
+    "name": "Susels",
+    "id": 58
+  },
+  {
+    "name": "Syndicate",
+    "id": 145
+  },
+  {
+    "name": "TauruS",
+    "id": 508
+  },
+  {
+    "name": "TCS",
+    "id": 74
+  },
+  {
+    "name": "TG",
+    "id": 427
+  },
+  {
+    "name": "TheAvengers",
+    "id": 529
+  },
+  {
+    "name": "TheGuild - RGuild",
+    "id": 193
+  },
+  {
+    "name": "TimeWolves",
+    "id": 330
+  },
+  {
+    "name": "TLK",
+    "id": 499
+  },
+  {
+    "name": "TO - Aton",
+    "id": 212
+  },
+  {
+    "name": "TradingGuild - RecruitsTradingGuild",
+    "id": 382
+  },
+  {
+    "name": "Trump - TrumpJuniors",
+    "id": 468
+  },
+  {
+    "name": "Ukraine",
+    "id": 525
+  },
+  {
+    "name": "UN",
+    "id": 206
+  },
+  {
+    "name": "UND",
+    "id": 56
+  },
+  {
+    "name": "Undead",
+    "id": 414
+  },
+  {
+    "name": "Vikings",
+    "id": 82
+  },
+  {
+    "name": "Volnye - VolnyeVetra",
+    "id": 13
+  },
+  {
+    "name": "vsL",
+    "id": 248
+  },
+  {
+    "name": "WheelWarriors",
+    "id": 223
+  },
+  {
+    "name": "WOT",
+    "id": 486
+  },
+  {
+    "name": "WS",
+    "id": 211
+  },
+  {
+    "name": "XXIUnicorn - KlanWolf",
+    "id": 45
+  },
+  {
+    "name": "xXx",
+    "id": 148
+  },
+  {
+    "name": "YoungBoys",
+    "id": 489
+  },
+  {
+    "name": "Армада",
+    "id": 546
+  }
+]

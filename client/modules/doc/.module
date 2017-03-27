@@ -1,0 +1,6 @@
+{
+  "name": "doc",
+  "label": "Лекарь",
+  "template": "doc/config.html",
+  "location": "tab"
+}

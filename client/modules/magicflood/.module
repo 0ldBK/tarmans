@@ -1,0 +1,6 @@
+{
+  "name": "magicflood",
+  "label": "Маг.флуд",
+  "template": "magicflood/config.html",
+  "location": "tab"
+}

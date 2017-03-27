@@ -1,0 +1,6 @@
+{
+  "name": "exchange",
+  "label": "биржа",
+  "template": "exchange/config.html",
+  "location": "tab"
+}

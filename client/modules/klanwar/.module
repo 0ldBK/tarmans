@@ -1,0 +1,6 @@
+{
+  "name": "klanwar",
+  "label": "Кланвар",
+  "template": "klanwar/config.html",
+  "location": "general"
+}

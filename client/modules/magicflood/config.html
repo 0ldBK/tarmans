@@ -1,0 +1,32 @@
+<fieldset>
+    <legend>Магический флуд</legend>
+    <div ng-if="tmp.magicflood.enemy">
+        <img ng-src="http://i.oldbk.com/i/align_{{tmp.magicflood.enemy.align}}.gif"
+             ng-if="tmp.magicflood.enemy.align">
+        <img ng-src="http://i.oldbk.com/i/klan/{{tmp.magicflood.enemy.klan}}.gif"
+             ng-if="tmp.magicflood.enemy.klan"
+             title="{{tmp.magicflood.enemy.klan}}">
+        <b>{{tmp.magicflood.enemy.login}}</b>
+        <a ng-if="tmp.magicflood.enemy.id"
+           ng-href="inf.php?{{tmp.magicflood.enemy.id}}" target="_blank">
+            <img src="http://i.oldbk.com/i/inf.gif" width="12" height="11"
+                 alt="Инф. о {{tmp.magicflood.enemy.login}}">
+        </a>
+        <a ng-click="scheduler.clear('magicflood');tmp.magicflood = null" style="cursor: pointer">✘</a>&nbsp;&nbsp;
+        <br>
+        <select ng-model="tmp.magicflood.action.scroll"
+                ng-readonly="scheduler.get('magicflood')"
+                ng-options="scroll as scroll.displayName group by scroll.placeName for scroll in magic">
+        </select>
+        <button ng-if="!scheduler.get('magicflood')"
+                ng-click="actions.magicFlood(tmp.magicflood)">Поехали!</button>
+    </div>
+    <div ng-if="!tmp.magicflood.enemy">
+        <input type="text"
+               ng-if="!tmp.magicflood.enemy"
+               ng-model="tmp.magicflood.login">
+        <button ng-click="reloadMagic();loadUser(tmp.magicflood.login, 'tmp.magicflood.enemy')">
+            Проверить
+        </button>
+    </div>
+</fieldset>

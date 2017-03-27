@@ -1,0 +1,34 @@
+{
+  "name": "tarman-plugin-server",
+  "version": "1.0.0",
+  "description": "Tarmans plugin server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "37c741168e79d35fd18e31b8c9db5331",
+  "license": "ISC",
+  "dependencies": {
+    "antigate": "0.0.1",
+    "bunyan": "^1.8.1",
+    "co": "^4.6.0",
+    "co-body": "^4.2.0",
+    "co-request": "^1.0.0",
+    "iconv-lite": "^0.4.13",
+    "js-string-escape": "^1.0.1",
+    "keygrip": "^1.0.1",
+    "koa": "^1.2.4",
+    "koa-bodyparser": "^2.2.0",
+    "koa-cors": "0.0.16",
+    "koa-qs": "^2.0.0",
+    "koa-route": "^2.4.2",
+    "koa-static": "^2.0.0",
+    "lru-cache": "^4.0.1",
+    "mongodb-promise": "0.0.4",
+    "mongorito": "^2.1.2",
+    "promise-queue": "^2.2.3",
+    "robe": "^0.12.0",
+    "uglify-js": "^2.7.3",
+    "xml2js": "^0.4.17"
+  }
+}
